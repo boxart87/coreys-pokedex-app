@@ -13,4 +13,4 @@ repository.forEach(function (currentItem) {
         document.write('</p>')
     }
     document.write(' <p><strong>Type(s):</strong> ' + currentItem.types + '</p>' + ' <p><strong>Abilities:</strong>' + currentItem.abilities + '</p><hr>');
-})
+});

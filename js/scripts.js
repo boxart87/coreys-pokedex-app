@@ -13,20 +13,26 @@ var pokemonRepository = (function () {
         return repository;
     }
 
+    function addListItem(pokemon) {
+        var listItem = document.createElement('li');
+        var button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('pokemon-button');
+        listItem.appendChild(button);
+        $pokemonList.appendChild(listItem);
+    }
+
     return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
+        addListItem: addListItem
     };
+
 })();
+
+var $pokemonList = document.querySelector('ul');
 
 
 pokemonRepository.getAll().forEach(function (currentItem) {
-    document.write('<h1>' + currentItem.name + '</h1>' + '<p><strong>Height:</strong> ' + currentItem.height + 'm');
-    if (currentItem.height > 1) {
-        document.write(' - Wow, that\'s big! </p>')
-    }
-    else {
-        document.write('</p>')
-    }
-    document.write(' <p><strong>Type(s):</strong> ' + currentItem.types + '</p>' + ' <p><strong>Abilities:</strong>' + currentItem.abilities + '</p><hr>');
+    pokemonRepository.addListItem(currentItem);
 });

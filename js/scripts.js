@@ -7,11 +7,11 @@ var pokemonRepository = (function () {
 
     function add(pokemon) {
         repository.push(pokemon);
-    }
+    };
 
     function getAll() {
         return repository;
-    }
+    };
 
     function addListItem(pokemon) {
         var listItem = document.createElement('li');
@@ -19,8 +19,13 @@ var pokemonRepository = (function () {
         button.innerText = pokemon.name;
         button.classList.add('pokemon-button');
         listItem.appendChild(button);
+        button.addEventListener('click', showDetails(pokemon));
         $pokemonList.appendChild(listItem);
-    }
+    };
+
+    function showDetails(pokemon) {
+        console.log(pokemon);
+    };
 
     return {
         add: add,

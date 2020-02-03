@@ -19,12 +19,14 @@ var pokemonRepository = (function () {
         button.innerText = pokemon.name;
         button.classList.add('pokemon-button');
         listItem.appendChild(button);
-        button.addEventListener('click', showDetails(pokemon));
+        button.addEventListener('click', function () {
+            showDetails(pokemon)
+        });
         $pokemonList.appendChild(listItem);
     };
 
     function showDetails(pokemon) {
-        console.log(pokemon);
+        console.log(pokemon)
     };
 
     return {

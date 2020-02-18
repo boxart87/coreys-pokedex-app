@@ -6,6 +6,86 @@ h1 {
   margin-bottom: 0;
   font-size: 75px;
 }
+#pokemon-modal-container {
+  display: none;
+}
+#pokemon-modal-container.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  overflow: auto;
+  display: grid;
+  text-align: center;
+}
+.pokemon-modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+.pokemon-modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.pokemon-modal h2 {
+  font-size: 50px;
+  margin-top: 0;
+}
+.pokemon-img {
+  max-width: 100px;
+  min-width: 80%;
+}
+.pokemon-modal img {
+  display: block;
+  margin: 0 auto;
+}
+/*pokemon info grid*/
+.pokemon-grid {
+  display: grid;
+  grid-template-colums: 1fr 1fr;
+  grid-gap: 50px;
+}
+.pokemon-grid_item:first-child {
+  grid-column: 1/1;
+  grid-row: 1/1;
+}
+.pokemon-grid_item:nth-child(2n) {
+  grid-column: 2/2;
+  grid-row: 1/1;
+}
+.pokemon-grid_item:nth-child(3n) {
+  grid-column: 1/1;
+  grid-row: 2/2;
+}
+/*COMMENTING OUT UNTIL I CAN FIGURE OUT THE JAVASCRIPT FOR TYPES
+.pokemon-grid_item:nth-child(4n) {
+  grid-column: 2/2;
+  grid-row: 2/2;
+}
+.pokemon-grid_item:nth-child(5n) {
+  grid-column: 1/1;
+  grid-row: 3/3;
+}*/
+.pokemon-grid_item:last-child {
+  grid-column: 2/2;
+  grid-row: 2/2;
+}
+
 .pokemon-list {
   list-style: none;
   padding: 20px;

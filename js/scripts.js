@@ -57,8 +57,13 @@ var pokemonRepository = (function () {
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
             item.weight = details.weight;
-            //COMMENTING OUT UNTIL I CAN RESERCH MORE ON HOW TO GET THIS INFO PROPERLY
-            //item.types = Object.keys(details.types);
+            //item.types = details.types.forEach.type.name;
+            if (details.types.length === 2) {
+                item.types = [details.types[1].type.name] + ' / ' + [details.types[0].type.name];
+            } else {
+                item.types = [details.types[0].type.name];
+            }
+
         }).catch(function (e) {
             console.error(e);
         });
@@ -94,16 +99,15 @@ var pokemonRepository = (function () {
         var pokemonGrid = document.createElement('div');
         pokemonGrid.classList.add('pokemon-grid');
 
-        //COMMENTING OUT UNTIL I CAN RESERCH MORE ON HOW TO GET THIS INFO PROPERLY
         //adds grid item h2 for pokemon type
-        //var pokemonType = document.createElement('h3');
-        //pokemonType.classList.add('pokemon-grid_item');
-        //pokemonType.innerText = 'Type(s)';
+        var pokemonType = document.createElement('h3');
+        pokemonType.classList.add('pokemon-grid_item');
+        pokemonType.innerText = 'Type(s)';
 
         //adds grid item p for pokemon type info
-        //var pokemonTypeInfo = document.createElement('p');
-        //pokemonTypeInfo.classList.add('pokemon-grid_item');
-        //pokemonTypeInfo.innerText = item.types;
+        var pokemonTypeInfo = document.createElement('p');
+        pokemonTypeInfo.classList.add('pokemon-grid_item');
+        pokemonTypeInfo.innerText = item.types;
 
         //adds grid item h2 for pokemon height
         var pokemonHeight = document.createElement('h3');
@@ -126,10 +130,8 @@ var pokemonRepository = (function () {
         pokemonWeightInfo.innerText = item.weight + 'kg';
 
         //appends grid items
-
-        //COMMENTING OUT UNTIL I CAN RESERCH MORE ON HOW TO GET THIS INFO PROPERLY
-        //pokemonGrid.appendChild(pokemonType);
-        //pokemonGrid.appendChild(pokemonTypeInfo);
+        pokemonGrid.appendChild(pokemonType);
+        pokemonGrid.appendChild(pokemonTypeInfo);
         pokemonGrid.appendChild(pokemonHeight);
         pokemonGrid.appendChild(pokemonHeightInfo);
         pokemonGrid.appendChild(pokemonWeight);

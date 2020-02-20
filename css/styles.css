@@ -6,6 +6,15 @@ h1 {
   margin-bottom: 0;
   font-size: 75px;
 }
+h2 {
+  margin-bottom: 0;
+}
+h3 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
 #pokemon-modal-container {
   display: none;
 }
@@ -72,7 +81,6 @@ h1 {
   grid-column: 1/1;
   grid-row: 2/2;
 }
-/*COMMENTING OUT UNTIL I CAN FIGURE OUT THE JAVASCRIPT FOR TYPES
 .pokemon-grid_item:nth-child(4n) {
   grid-column: 2/2;
   grid-row: 2/2;
@@ -80,10 +88,10 @@ h1 {
 .pokemon-grid_item:nth-child(5n) {
   grid-column: 1/1;
   grid-row: 3/3;
-}*/
+}
 .pokemon-grid_item:last-child {
   grid-column: 2/2;
-  grid-row: 2/2;
+  grid-row: 3/3;
 }
 
 .pokemon-list {
